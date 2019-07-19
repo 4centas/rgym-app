@@ -1,1 +1,2 @@
-1. Build "WorkourPlanDay" Component to be called at "WorkourPlan" Component
+1 - DONE => Build "WorkourPlanDay" Component to be called at "WorkourPlan" Component
+2 => Add Weight Input requirement (mandatory) when the user connects

@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
+import WorkoutPlanDay from '../WorkoutPlanDay';
 
 export class WorkoutPlan extends Component {
 
-    getList(workoutplan) {
+    getDay(separator, listIndex) {
+        const days = separator.days;
         return (
             <div>
                 {
-                    workoutplan.map((separator) => {
-                        return <li>{separator.separator}</li>
-                    })
+                    [
+                        <h2 key={listIndex}>{separator.separator}</h2>,
+                        days.map((day, index) => {
+                            return (<WorkoutPlanDay key={index} day={day} listIndex={listIndex}/>)
+                        })
+                    ]
                 }
             </div>
         );
@@ -36,9 +41,7 @@ export class WorkoutPlan extends Component {
                                         workout.map((separator, index) => {
                                             return (
                                                 <li key={index}>
-                                                    {separator.separator
-                                                    // Add "WorkoutPlanDay" Component here
-                                                }
+                                                    {this.getDay(separator, index)}
                                                 </li>
                                             )
                                         })
