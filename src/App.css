@@ -1,5 +1,8 @@
+/* Colors */
+/* Defaults */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -7,6 +10,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#639EDB), to(#0668CF)) no-repeat;
+  background: linear-gradient(to bottom, #639EDB, #0668CF) no-repeat;
+  height: 100vh;
+  width: 100vw;
 }
 
 a {
@@ -30,3 +37,155 @@ a {
 .btn:hover {
   background: #666;
 }
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* Weight Form */
+.weightFormContainer {
+  /* Position */
+  height: 20vmin;
+  width: 60vmin;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Style */
+  border-radius: 6px;
+  margin: auto;
+  background-color: #1566BB;
+}
+
+#weightFormPulse {
+  /* Position */
+  height: 20vmin;
+  width: 60vmin;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Style */
+  border-style: solid;
+  border-color: #5E99D6;
+  border-width: 2px;
+  border-radius: 6px;
+  /* Animation */
+  background: transparent;
+  -webkit-animation: mymove 2s infinite;
+          animation: mymove 2s infinite;
+}
+
+@-webkit-keyframes mymove {
+  0% {
+    top: 0;
+    left: 0;
+    height: 20vmin;
+    width: 60vmin;
+  }
+  50% {
+    top: -2.5vmin;
+    left: -2.5vmin;
+    height: 25vmin;
+    width: 65vmin;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    height: 20vmin;
+    width: 60vmin;
+  }
+}
+
+@keyframes mymove {
+  0% {
+    top: 0;
+    left: 0;
+    height: 20vmin;
+    width: 60vmin;
+  }
+  50% {
+    top: -2.5vmin;
+    left: -2.5vmin;
+    height: 25vmin;
+    width: 65vmin;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    height: 20vmin;
+    width: 60vmin;
+  }
+}
+
+#weightFormPulse:hover {
+  width: 13.3em;
+  height: 4em;
+}
+
+.weightFormWeight {
+  /* Position */
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Style */
+  font-size: 7.5vmin;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+}
+
+.weightFormKG {
+  /* Position */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  width: 40%;
+  margin: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* Style */
+  background: #5E99D6;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.weightFormKG p {
+  margin: auto;
+  vertical-align: middle;
+  color: white;
+  font-size: 7.5vmin;
+}
+
+.weightFormButton {
+  /* Position */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 65%;
+  width: 35%;
+  margin: auto;
+  /* Style */
+  border-radius: 6px;
+  background: #5E99D6;
+  border: none;
+  color: #1566BB;
+  cursor: pointer;
+  font-size: 7.5vmin;
+}
+/*# sourceMappingURL=App.css.map */

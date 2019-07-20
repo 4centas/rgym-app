@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
-import WorkoutPlanDay from '../WorkoutPlanDay';
+import WorkoutPlanDay from './WorkoutPlanDay';
 
 export class WorkoutPlan extends Component {
 

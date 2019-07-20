@@ -8,6 +8,7 @@ import Header from './components/layout/header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
+import Weight from './components/Weight';
 
 import Programs from './components/Programs';
 import WorkoutPlan from './components/WorkoutPlan';
@@ -17,6 +18,7 @@ import './App.css';
 class App extends Component {
     state = {
         todos: [],
+        weight: undefined,
         programs: []
     }
 
@@ -77,8 +79,25 @@ class App extends Component {
             });
     }
 
+    addWeight = (event, weight) => {
+        event.preventDefault();
+        this.setState({weight: weight});
+    }
+
     updatePrograms = (programs) => {
         this.setState({programs: programs});
+    }
+
+    renderPrograms = () => {
+        return () => {
+            if (this.state.weight) {
+                return (<React.Fragment>
+                    <Programs programs={this.state.programs} updatePrograms={this.updatePrograms}/>
+                </React.Fragment>)
+            } else {
+                return (<Weight weight={this.state.weight} addWeight={this.addWeight}/>)
+            }
+        }
     }
 
     render() {
@@ -86,7 +105,7 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <div className="container">
-                        <Header/>
+                        <Header weight={this.state.weight}/>
                         <Route
                             path="/todos"
                             render={props => (
@@ -102,11 +121,7 @@ class App extends Component {
 
                         <Route
                             path="/programs"
-                            render={props => (
-                                <React.Fragment>
-                                    <Programs programs={this.state.programs} updatePrograms={this.updatePrograms}/>
-                                </React.Fragment>
-                            )}/>
+                            render={this.renderPrograms()}/>
 
                         <Route
                             path="/planold/:title"
@@ -127,39 +142,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-{
-                id: uuid.v4(),
-                title: "Powerlifting",
-                separator: [
-                    "Week 1", "Week 2", "Week 3"
-                ],
-                workout: {
-                    "Week 1": {
-                        "Day 1": {
-                            exercise: "Bench Press",
-                            sets: "4",
-                            reps: "12"
-                        },
-                        "Day 2": {
-                            exercise: "Bench Press",
-                            sets: "8",
-                            reps: "3"
-                        }
-                    },
-                    "Week 2": {
-                        "Day 1": {
-                            exercise: "Bench Press",
-                            sets: "4",
-                            reps: "7"
-                        },
-                        "Day 2": {
-                            exercise: "Bench Press",
-                            sets: "6",
-                            reps: "3"
-                        }
-                    }
-                }
-            }
-*/
