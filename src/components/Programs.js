@@ -9,18 +9,8 @@ class Programs extends Component {
         programs: []
     };
 
-    async getPlans() {
-        Axios
-            .get('http://localhost:8080/api/getPlanList')
-            .then((res) => {
-                return res.data
-            });
-    }
-
     componentDidMount() {
         const App = this.props;
-
-        console.log(App)
 
         if (!App.programs.length) {
             Axios
@@ -37,9 +27,9 @@ class Programs extends Component {
         if (!App.programs.length) {
             return (<div>Loading ...</div>);
         } else {
-            return App.programs.map(
+            return (<div id="program-list">{App.programs.map(
                 (program) => (<ProgramItem key={program.title} program={program}/>)
-            );
+            )}</div>);
         }
 
     }

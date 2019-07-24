@@ -8,10 +8,10 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.4;
-  background: -webkit-gradient(linear, left top, left bottom, from(#639EDB), to(#0668CF)) no-repeat;
-  background: linear-gradient(to bottom, #639EDB, #0668CF) no-repeat;
+  /*background: linear-gradient(to bottom, #639EDB, #0668CF) no-repeat;*/
+  background: #fff;
   height: 100vh;
   width: 100vw;
 }
@@ -22,7 +22,8 @@ a {
 }
 
 .container {
-  padding: 0 1rem;
+  height: 100vh;
+  width: 100vw;
 }
 
 .btn {
@@ -44,6 +45,106 @@ input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
   /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* Mixins */
+/* Header */
+#header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Style */
+  height: 15%;
+  width: 100vw;
+  background: #303030;
+  padding: 10px;
+  /* Text */
+  color: #fff;
+  text-align: center;
+}
+
+#header-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Position */
+  position: absolute;
+  top: 0;
+  left: 5%;
+  /* Style */
+  height: 15%;
+  width: 15%;
+  /* Text */
+  font-size: 7.5vh;
+}
+
+#header-links {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* Style */
+  width: 30%;
+  /* Text */
+  text-align: center;
+}
+
+#header-link-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Style */
+  height: 100%;
+  width: 100%;
+}
+
+.header-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  /* Style */
+  margin: 0 5%;
+  color: #fff;
+  /* Text */
+  text-decoration: none;
+  font-size: 6vh;
+}
+
+#header-weight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Position */
+  position: absolute;
+  top: 0;
+  left: 80%;
+  height: 15%;
+  width: 15%;
+  /* Text */
+  font-size: 4.5vh;
 }
 
 /* Weight Form */
@@ -187,5 +288,42 @@ input::-webkit-outer-spin-button {
   color: #1566BB;
   cursor: pointer;
   font-size: 7.5vmin;
+}
+
+/* Program */
+#program-list {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  height: 85%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.program {
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+  text-decoration: none;
+  cursor: pointer;
+  width: 33vw;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=App.css.map */
