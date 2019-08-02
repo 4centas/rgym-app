@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default function header(props) {
     return (
         <div id="header">
-            <h1 id="header-logo">RGYM</h1>
+            <Link to={'/programs'} id="header-logo">RGYM</Link>
             <div id="header-links">
                 <div id="header-link-container">
                     <Link className="header-link" to="/programs">Programas</Link>
@@ -15,16 +15,3 @@ export default function header(props) {
         </div>
     )
 }
-
-/*
-const linkStyle = {
-    color: '#fff',
-    textDecoration: 'none'
-}
-
-const headerStyle = {
-    background: '#1566BB',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px'
-}*/

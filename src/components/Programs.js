@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProgramItem from './ProgramItem';
+import Loading from './layout/loading';
 //import PropTypes from 'prop-types';
 
 import Axios from 'axios';
@@ -14,7 +15,7 @@ class Programs extends Component {
 
         if (!App.programs.length) {
             Axios
-            .get('http://localhost:8080/api/getPlanList')
+            .get(`https://4centas-rgym-api.glitch.me/api/getPlanList`)
             .then((res) => {
                 App.updatePrograms(res.data);
             });
@@ -25,7 +26,7 @@ class Programs extends Component {
         const App = this.props;
 
         if (!App.programs.length) {
-            return (<div>Loading ...</div>);
+            return (<Loading/>);
         } else {
             return (<div id="program-list">{App.programs.map(
                 (program) => (<ProgramItem key={program.title} program={program}/>)
